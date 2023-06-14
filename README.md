@@ -16,9 +16,13 @@ FurniChic is a furniture e-commerce Android app that offers the following featur
 
 # 💡 Preview
 
-
-
-
+<p align="center">
+  <img src="https://github.com/nadiaseleem/FurniChic/assets/37695970/88679393-1218-43a4-8cc7-e2d8fbeddc17" width="279" height="600">
+  <img src="https://github.com/nadiaseleem/FurniChic/assets/37695970/14f2b4bc-d6f9-4724-a802-f62192cb041f" width="279" height="600">
+  <img src="https://github.com/nadiaseleem/FurniChic/assets/37695970/06be08bc-7b25-4143-a51b-4954fe3213e2" width="279" height="600">
+  <img src="https://github.com/nadiaseleem/FurniChic/assets/37695970/0419486f-a0fd-4734-ae41-9eed8e5955e6" width="279" height="600">
+ 
+</p>
 
 # 🌟 Libraries and technologies used
 
