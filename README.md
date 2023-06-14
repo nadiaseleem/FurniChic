@@ -40,7 +40,7 @@ FurniChic provides a user-friendly platform for selling furniture, ensuring a sm
 
 - Dagger Hilt: Utilized for dependency injection, simplifying the app's architecture and managing dependencies between components efficiently.
 
-View Binding: Employed to streamline the process of inflating views in the app's UI, improving code readability and development efficiency.
+- View Binding: Employed to streamline the process of inflating views in the app's UI, improving code readability and development efficiency.
 
 - Glide: Integrated image loading and caching library, enabling efficient loading and display of furniture images, enhancing visual appeal and performance.
 
