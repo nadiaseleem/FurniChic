@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_230sdp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="0dp"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardBackgroundColor="@color/g_card_background"
+    app:cardUseCompatPadding="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageSpecialRvItem"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/test_image" />
+
+        <TextView
+            android:id="@+id/tvSpecialProductName"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:text="Scotch Premium"
+            app:layout_constraintStart_toEndOf="@id/imageSpecialRvItem"
+            app:layout_constraintTop_toTopOf="@id/imageSpecialRvItem"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:fontFamily="@font/poppins_thin"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_17ssp"/>
+
+        <TextView
+            android:id="@+id/tvSpecialPrdouctPrice"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:text="$1600"
+            app:layout_constraintStart_toStartOf="@id/tvSpecialProductName"
+            app:layout_constraintTop_toBottomOf="@id/tvSpecialProductName"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/sf_pro_display"/>
+
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/btn_add_to_cart"
+            android:layout_width="@dimen/_77sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/btn_background"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/g_add_to_cart"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSpecialPrdouctPrice"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textAllCaps="false"
+            />
+
+        <LinearLayout
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_23sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/favorite_background"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:src="@drawable/ic_favorite"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_7sdp"
+                />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

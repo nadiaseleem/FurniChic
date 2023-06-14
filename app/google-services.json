@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "186917273036",
+    "project_id": "furnivibe-104d5",
+    "storage_bucket": "furnivibe-104d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186917273036:android:e29651bff4508479faf169",
+        "android_client_info": {
+          "package_name": "com.example.furnichic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbcOdVWKzCW7SX9ElOgZMN6ThXkzMO6dg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
