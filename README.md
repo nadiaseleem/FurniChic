@@ -2,16 +2,16 @@
 
 FurniChic is a furniture e-commerce Android app that offers the following features:
 
-User registration and authentication with social media integration.
-Seamless browsing of furniture categories and easy search functionality.
-Convenient cart system for adding and managing selected items.
-"Save for Later" feature to bookmark products for future reference.
-Streamlined cart display and checkout process.
-Secure payment gateway integration for seamless transactions.
-User profiles displaying order history, order tracking, and the ability to update billing card and address.
-Localization support for personalized experiences.
-Push notifications to keep users informed about orders and promotions.
-FurniChic provides a user-friendly platform for selling furniture, ensuring a smooth and enjoyable shopping experience for users.
+- User registration and authentication with social media integration.
+- Seamless browsing of furniture categories and easy search functionality.
+- Convenient cart system for adding and managing selected items.
+- "Save for Later" feature to bookmark products for future reference.
+- Streamlined cart display and checkout process.
+- Secure payment gateway integration for seamless transactions.
+- User profiles displaying order history, order tracking, and the ability to update billing card and address.
+- Localization support for personalized experiences.
+- Push notifications to keep users informed about orders and promotions.
+- FurniChic provides a user-friendly platform for selling furniture, ensuring a smooth and enjoyable shopping experience for users.
 
 
 # 💡 Preview
