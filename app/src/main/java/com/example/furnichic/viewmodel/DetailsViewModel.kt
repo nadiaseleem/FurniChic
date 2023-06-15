@@ -5,11 +5,13 @@ import CartProduct
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.furnichic.firebase.FirebaseCommon
+import com.example.furnichic.util.Constants
 import com.example.furnichic.util.Resource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -22,11 +24,11 @@ class DetailsViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _addToCart = MutableStateFlow<Resource<CartProduct>>(Resource.Unspecified())
-    val addToCart = _addToCart.asStateFlow()
+    val addToCart = _addToCart.asSharedFlow()
 
     fun addUpdateProductInCart(cartProduct: CartProduct) {
         viewModelScope.launch { _addToCart.emit(Resource.Loading()) }
-        firestore.collection("user").document(auth.uid!!).collection("cart")
+        firestore.collection(Constants.USERS_COLLECTION).document(auth.uid!!).collection("cart")
             .whereEqualTo("product.id", cartProduct.product.id).get()
             .addOnSuccessListener {
                 it.documents.let {

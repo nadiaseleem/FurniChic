@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.furnichic.data.Product
 import com.example.furnichic.databinding.ProductRvItemBinding
+import com.example.furnichic.helper.getProductPrice
 
 class BestProductsAdapter : RecyclerView.Adapter<BestProductsAdapter.BestProductsViewHolder>() {
 
@@ -18,10 +19,7 @@ class BestProductsAdapter : RecyclerView.Adapter<BestProductsAdapter.BestProduct
         fun bind(product: Product) {
             binding.apply {
                 product.offerPercentage?.let {
-
-                    val remainingPricePercentage = (100 - it)/100
-                    val priceAfterOffer = remainingPricePercentage * product.price
-                    tvNewPrice.text = "$${String.format("%.2f",priceAfterOffer)}"
+                    tvNewPrice.text = "$${String.format("%.2f",it.getProductPrice(product.price))}"
                     tvPrice.paintFlags = tvPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
                     tvPrice.text = "$${product.price}"
 

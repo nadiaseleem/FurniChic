@@ -14,6 +14,7 @@ import com.example.furnichic.R
 import com.example.furnichic.adapters.BestProductsAdapter
 import com.example.furnichic.databinding.FragmentBaseCategoryBinding
 import com.example.furnichic.fragments.shopping.HomeFragmentDirections
+import com.example.furnichic.util.showBottomNavigationView
 
 
 open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
@@ -51,15 +52,15 @@ private lateinit var binding:FragmentBaseCategoryBinding
             }
         })
 
-//        offerAdapter.onClick = {
-//            val b = Bundle().apply { putParcelable("product",it) }
-//            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
-//        }
-//
-//        bestProductsAdapter.onClick = {
-//            val b = Bundle().apply { putParcelable("product",it) }
-//            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
-//        }
+        offerAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("product",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
+        }
+
+        bestProductsAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("product",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
+        }
     }
 
 
@@ -98,5 +99,10 @@ private lateinit var binding:FragmentBaseCategoryBinding
 
     open fun showLoadingOfferProducts() {
         binding.offerProductsProgressBar.visibility = View.VISIBLE
+    }
+    override fun onResume() {
+        super.onResume()
+
+        showBottomNavigationView()
     }
 }

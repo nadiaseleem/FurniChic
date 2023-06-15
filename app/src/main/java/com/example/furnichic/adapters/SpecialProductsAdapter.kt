@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.furnichic.data.Product
 import com.example.furnichic.databinding.SpecialRvItemBinding
+import com.example.furnichic.helper.getProductPrice
 
 class SpecialProductsAdapter :
     RecyclerView.Adapter<SpecialProductsAdapter.SpecialProductsViewHolder>() {
@@ -19,7 +20,8 @@ class SpecialProductsAdapter :
             binding.apply {
                 Glide.with(itemView).load(product.images.last()).into(imageSpecialRvItem)
                 tvSpecialProductName.text = product.name
-                tvSpecialPrdouctPrice.text = "$${product.price}"
+                val priceAfterPercentage = product.offerPercentage.getProductPrice(product.price)
+                tvSpecialPrdouctPrice.text = "$ ${String.format("%.2f", priceAfterPercentage)}"
                 btnAddToCart.setOnClickListener {
                     onAddToCartClick?.invoke(product)
                 }

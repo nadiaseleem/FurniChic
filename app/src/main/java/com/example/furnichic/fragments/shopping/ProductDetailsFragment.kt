@@ -1,6 +1,7 @@
 package com.example.furnichic.fragments.shopping
 
 import CartProduct
+import android.graphics.Paint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,13 +16,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.furnichic.R
 import com.example.furnichic.data.Product
 import com.example.furnichic.databinding.FragmentProductDetailsBinding
-import com.example.furnichic.util.Constants.IMAGES
+import com.example.furnichic.helper.getProductPrice
 import com.example.furnichic.util.Resource
+import com.example.furnichic.util.hideBottomNavigationView
 import com.example.furnichic.viewmodel.DetailsViewModel
 import com.example.kelineyt.adapters.ColorsAdapter
 import com.example.kelineyt.adapters.SizesAdapter
 import com.example.kelineyt.adapters.ViewPager2ImagesAdapter
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.vejei.viewpagerindicator.indicator.CircleIndicator
 import kotlinx.coroutines.flow.collectLatest
@@ -49,9 +50,7 @@ class ProductDetailsFragment: Fragment(R.layout.fragment_product_details) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val bottomNavigation = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigation)
-        bottomNavigation.visibility = View.GONE
+        hideBottomNavigationView()
         setupImageViewPager()
         setupColorRv()
         setupSizeRv()
@@ -96,7 +95,7 @@ class ProductDetailsFragment: Fragment(R.layout.fragment_product_details) {
                     return@setOnClickListener
                 }
 
-                if (selectedSize==null) {
+                if (selectedSize==null&& product.sizes?.isNotEmpty() == true) {
                     binding.tvSizeError.visibility = View.VISIBLE
                     return@setOnClickListener
                 }
@@ -145,7 +144,10 @@ class ProductDetailsFragment: Fragment(R.layout.fragment_product_details) {
 
         binding.apply {
             tvProductName.text = product.name
+            val priceAfterPercentage = product.offerPercentage.getProductPrice(product.price)
+            tvProductOfferPrice.text = "$ ${String.format("%.2f", priceAfterPercentage)}"
             tvProductPrice.text = "$ ${product.price}"
+            tvProductPrice.paintFlags = tvProductPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
             tvProductDescription.text = product.description
 
             if (product.colors.isNullOrEmpty())

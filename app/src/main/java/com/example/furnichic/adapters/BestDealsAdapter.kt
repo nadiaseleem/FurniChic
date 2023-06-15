@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.example.furnichic.R
 import com.example.furnichic.data.Product
 import com.example.furnichic.databinding.BestDealsRvItemBinding
+import com.example.furnichic.helper.getProductPrice
 
 class BestDealsAdapter : RecyclerView.Adapter<BestDealsAdapter.BestDealsViewHolder>() {
 
@@ -22,9 +23,7 @@ class BestDealsAdapter : RecyclerView.Adapter<BestDealsAdapter.BestDealsViewHold
             binding.apply {
                 Glide.with(itemView).load(product.images[1]).into(imgBestDeal)
                 product.offerPercentage?.let {
-                    val remainingPricePercentage = (100 - it)/100
-                    val priceAfterOffer = remainingPricePercentage * product.price
-                    tvNewPrice.text = "$${String.format("%.2f",priceAfterOffer)}"
+                    tvNewPrice.text = "$${String.format("%.2f",it.getProductPrice(product.price))}"
 
                 }
                 tvOldPrice.text = "$${product.price}"

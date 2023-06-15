@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="110dp"
-            android:drawableStart="@drawable/ic_kleine_shape"
+            android:drawableStart="@drawable/ic_furnichic_shape"
             android:drawablePadding="6dp"
             android:text="@string/g_app_name"
             android:textStyle="bold"

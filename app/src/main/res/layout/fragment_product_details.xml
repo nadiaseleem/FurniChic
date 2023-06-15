@@ -13,7 +13,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/viewpager_card"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_350sdp"
+            android:layout_height="@dimen/_280sdp"
             android:layout_marginTop="20dp"
             app:cardCornerRadius="15dp"
             app:layout_constraintEnd_toEndOf="@id/guideline2"

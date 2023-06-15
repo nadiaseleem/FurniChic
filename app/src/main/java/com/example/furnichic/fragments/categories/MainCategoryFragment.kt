@@ -24,6 +24,7 @@ import com.example.furnichic.data.Product
 import com.example.furnichic.databinding.FragmentMainCategoryBinding
 import com.example.furnichic.fragments.shopping.HomeFragmentDirections
 import com.example.furnichic.util.Resource
+import com.example.furnichic.util.showBottomNavigationView
 import com.example.furnichic.viewmodel.DetailsViewModel
 import com.example.furnichic.viewmodel.MainCategoryViewModel
 import com.example.kelineyt.adapters.SpecialProductsAdapter
@@ -55,7 +56,6 @@ class MainCategoryFragment: Fragment(R.layout.fragment_main_category) {
         setupBestDealsRv()
         setupBestProductsRv()
         onBtnAddToCartClick()
-        observeAddToCart()
         lifecycleScope.launchWhenStarted {
             viewModel.specialProducts.collectLatest{
                 when(it) {
@@ -201,12 +201,27 @@ class MainCategoryFragment: Fragment(R.layout.fragment_main_category) {
     private fun onBtnAddToCartClick() {
         specialProductsAdapter.onAddToCartClick = {product->
 
-            cartViewModel.addUpdateProductInCart(
-                CartProduct(
-                    product, 1,
-                    product.colors?.get(0), product.sizes?.get(0)
+            if(product.sizes != null){
+
+                cartViewModel.addUpdateProductInCart(
+                    CartProduct(
+                        product, 1,
+                        product.colors?.get(0),
+                        if(product.sizes.isNotEmpty()) product.sizes[0] else null
+                    )
                 )
-            )
+            }else{
+
+                cartViewModel.addUpdateProductInCart(
+                    CartProduct(
+                        product, 1,
+                        product.colors?.get(0),
+                        null
+                    )
+                )
+            }
+            observeAddToCart()
+
         }
     }
 
@@ -233,5 +248,12 @@ class MainCategoryFragment: Fragment(R.layout.fragment_main_category) {
             }
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        showBottomNavigationView()
+    }
+
 
 }
