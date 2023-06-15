@@ -21,7 +21,7 @@ FurniChic is a furniture e-commerce Android app that offers the following featur
   <img src="https://github.com/nadiaseleem/FurniChic/assets/37695970/14f2b4bc-d6f9-4724-a802-f62192cb041f" width="279" height="600">
   <img src="https://github.com/nadiaseleem/FurniChic/assets/37695970/af4f859c-f801-42b8-90ea-b5c3b54e92da" width="279" height="600">
   <img src="https://github.com/nadiaseleem/FurniChic/assets/37695970/6390478a-daf9-471f-ab78-cad8af3d0d7d" width="279" height="600">
-   <img src="https://github.com/nadiaseleem/FurniChic/assets/37695970/6877dfaa-d6d1-4b3d-b4dc-b2daf1d35641" width="279" height="600">
+   <img src="https://github.com/nadiaseleem/FurniChic/assets/37695970/3c420e0a-fe83-42c9-8670-6aaa41c4c2e5" width="279" height="600">
     <img src="https://github.com/nadiaseleem/FurniChic/assets/37695970/dc0df046-fe13-43e7-9319-614b8ab897ce" width="279" height="600">
     <img src="https://github.com/nadiaseleem/FurniChic/assets/37695970/39746740-552c-4a77-bbb1-62160e70ab08" width="279" height="600">
       <img src="https://github.com/nadiaseleem/FurniChic/assets/37695970/6b829b0c-7014-4e96-a7dc-e529c9df7dd0" width="279" height="600">
