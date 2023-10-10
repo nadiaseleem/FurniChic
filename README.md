@@ -39,7 +39,7 @@ FurniChic is a furniture e-commerce Android app that offers the following featur
 
 - Pagination: Implemented to efficiently load and display large sets of furniture items, enhancing performance and user experience.
 
-- Stripe: Integrated payment gateway service, enabling secure and seamless online transactions for furniture purchases.
+- Paymob: Integrated payment gateway service, enabling secure and seamless online transactions for furniture purchases.
 
 - Localization: Supported multiple languages and regions, providing a localized experience for users, improving accessibility and engagement.
 
